@@ -6,3 +6,11 @@ C:\Users\oleg\source\repos\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.SuggestedBin
 C:\Users\oleg\source\repos\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CoreCompileInputs.cache
 C:\Users\oleg\source\repos\ConsoleApp7\obj\Debug\ConsoleApp7.exe
 C:\Users\oleg\source\repos\ConsoleApp7\obj\Debug\ConsoleApp7.pdb
+C:\Users\oleg\Desktop\ConsoleApp7\bin\Debug\ConsoleApp7.exe.config
+C:\Users\oleg\Desktop\ConsoleApp7\bin\Debug\ConsoleApp7.exe
+C:\Users\oleg\Desktop\ConsoleApp7\bin\Debug\ConsoleApp7.pdb
+C:\Users\oleg\Desktop\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.AssemblyReference.cache
+C:\Users\oleg\Desktop\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.SuggestedBindingRedirects.cache
+C:\Users\oleg\Desktop\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CoreCompileInputs.cache
+C:\Users\oleg\Desktop\ConsoleApp7\obj\Debug\ConsoleApp7.exe
+C:\Users\oleg\Desktop\ConsoleApp7\obj\Debug\ConsoleApp7.pdb
