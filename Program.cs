@@ -22,17 +22,17 @@ namespace ConsoleApp7
             int sumblue = 0;
             int sumtrans = 0;
 
-            int elemcount = 4;
+            int BlockSize = 4;
 
             int k;
 
-            for (int i = -4; i < massive1.Length - elemcount * 3; i += 4)
+            for (int i = -4; i < massive1.Length - BlockSize * 3; i += 4)
             {
                 sumred = 0;
                 sumgreen = 0;
                 sumtrans = 0;
                 sumblue = 0;
-                k = elemcount;
+                k = BlockSize;
 
                 for (int j = 0; j < massive2.Length; j++)
                 {
@@ -44,15 +44,20 @@ namespace ConsoleApp7
 
                     sumtrans += massive1[i + 3 + k] * massive2[j];
 
-                    k += elemcount;
-
+                    k += BlockSize;
                 }
                 sumred = sumred / 3;
                 sumgreen = sumgreen / 3;
                 sumblue = sumblue / 3;
                 sumtrans = sumtrans / 3;
-                Console.WriteLine(sumred);
+                i += BlockSize;
+                result[i] = sumred;
+                result[i + 1] = sumgreen;
+                result[i + 2] = sumblue;
+                result[i + 3] = sumtrans;
+                Console.WriteLine(result[i]);
                 Console.ReadLine();
+                i -= BlockSize;
             }
             
         }
