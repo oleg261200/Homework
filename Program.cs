@@ -61,7 +61,7 @@ namespace Zadanie6
             }
 
 
-            for (int i = -blockSize; i < massive1.Length - blockSize * 3; i += blockSize)
+            for (int i = -blockSize + 1; i < massive1.Length - blockSize * 3; i += blockSize)
 
             {
                 int sumRed = 0;
@@ -78,7 +78,7 @@ namespace Zadanie6
 
                     }
                     sumRed = sumRed / 3;
-                    result[i + k + 1 + blockSize] = sumRed;
+                    result[i + k + blockSize] = sumRed;
                     sumRed = 0;
                 }
 
