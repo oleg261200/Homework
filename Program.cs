@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,11 +14,10 @@ namespace Zadanie6
         {
             int[] massive1 = 
             {   
-                3, 2, 7, 5, 
-                1, 3, 2, 9, 
-                4, 7, 3, 1, 
-                4, 7, 5, 1,
-                4, 0, 4, 8,
+                3, 2, 7, 5, 1,
+                3, 2, 9, 4, 7,
+                3, 1, 4, 7, 5,
+                1, 4, 0, 4, 8,
                 7, 2, 5, 0,
                 7, 3, 2, 7,
                 5, 1, 3, 2,
@@ -42,7 +42,7 @@ namespace Zadanie6
 
             int[,] massive2 = {{1, 1, 1}, { 1, 1, 1 } ,{ 1, 1, 1 }};
 
-            int blockSize = 4;
+            int blockSize = 5;
 
             int[] result = new int[massive1.Length];
 
@@ -52,40 +52,45 @@ namespace Zadanie6
 
             for (int i = -blockSize; i < massive1.Length - blockSize * 3; i += blockSize)
             {
-                int sumred = 0;
-                int sumgreen = 0;
-                int sumblue = 0;
-                int sumtrans = 0;
+                int sumRed = 0;
+                int sumGreen = 0;
+                int sumBlue = 0;
+                int sumTrans = 0;
+                int firstElem = 0;
 
                 for (int k = 0; k < columns; k++)
                 {
                     for (int j = 0; j < rows; j++)
 
                     {
-                        sumred += massive1[i + k + blockSize * (j + 1)] * massive2[j, k];
+
+                        sumRed += massive1[i + blockSize * (j + 1)] * massive2[j, k];
                         
-                        sumgreen += massive1[i + 1 + blockSize * (j + 1)] * massive2[j, k];
+                        sumGreen += massive1[i + 1 + blockSize * (j + 1)] * massive2[j, k];
 
-                        sumblue += massive1[i + 2 + blockSize * (j + 1)] * massive2[j, k];
+                        sumBlue += massive1[i + 2 + blockSize * (j + 1)] * massive2[j, k];
 
-                        sumtrans += massive1[i + 3 + blockSize * (j + 1)] * massive2[j, k];
+                        sumTrans += massive1[i + 3 + blockSize * (j + 1)] * massive2[j, k];
+
+
                     }
-                    sumred = sumred / 3;
-                    sumgreen = sumgreen / 3;
-                    sumblue = sumblue / 3;
-                    sumtrans = sumtrans / 3;
+                    sumRed = sumRed / 3;
+                    sumGreen = sumGreen / 3;
+                    sumBlue = sumBlue / 3;
+                    sumTrans = sumTrans / 3;
 
-                    result[massive1.Length - blockSize] = massive1[i];
-                    result[i + blockSize] = sumred;
-                    result[i + 1 + blockSize] = sumgreen;
-                    result[i + 2 + blockSize] = sumblue;
-                    result[i + 3 + blockSize] = sumtrans;
+                    result[i + 1 + blockSize] = sumRed;
+                    result[i + 2 + blockSize] = sumGreen;
+                    result[i + 3 + blockSize] = sumBlue;
+                    result[i + 4 + blockSize] = sumTrans;
 
-                    Console.WriteLine(result[i + 1 +blockSize]);
-                    Console.ReadLine();
+                    
                 }
+                firstElem = massive1[i + blockSize];
+                result[i + blockSize] = firstElem;
+                Console.WriteLine(result[i + blockSize]);
+                Console.ReadLine();
             }
-
         }
     }
 }
